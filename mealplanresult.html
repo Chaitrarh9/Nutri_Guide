@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plan Result</title>
+    <link rel="stylesheet" href="mealplanresult.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <style>
+        html, body {
+            font-family: sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        * {
+            text-decoration: none;
+        }
+        body {
+            background-image: url('img/mealplanner.png');
+            background-position: center;
+            background-size: cover;
+        }
+        .nav {
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+            background-color: white;
+            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.10);
+        }
+        .nav .links a {
+            margin-right: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            color: black;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 100px; /* Adjust as needed */
+        }
+        h1 {
+            color: #333;
+            margin-top: 120px;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-top: 80px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #060606;
+            text-align: left;
+        }
+        button[type="submit"] {
+            background-color: #7e8c06;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #b8ca1c;
+        }
+    </style>
+</head>
+<body>
+    <section id="Mheader">
+        <div class="wrapper">
+            <div class="nav">
+                <div class="logo">
+                    <h3>The NutriGuide</h3>
+                </div>
+                <div class="links">
+                    <a href="Home.html">Home</a>
+                    <a href="dietary.html">Dietary</a>
+                    <a href="Userprofile.html">UserProfile</a>
+                    <a href="Mealplanner.html">MealPlanner</a>  
+                </div>
+            </div>
+        </div>
+    </section>
+    <h1>Meal Planner</h1>
+    <div id="mealPlanResult"></div>
+
+    <script>
+        // Parse the query string to retrieve meal plan data
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const mealPlanResult = document.getElementById('mealPlanResult');
+
+        // Display meal plan data
+        urlParams.forEach((value, key) => {
+            const meal = key.charAt(0).toUpperCase() + key.slice(1); // Capitalize meal name
+            mealPlanResult.innerHTML += `<p>${meal}: ${value}</p>`;
+        });
+    </script>
+</body>
+</html>

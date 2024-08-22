@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet website</title>
+    <link rel="stylesheet" href="mstyle.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <style>
+        /* Basic reset for padding and margin */
+        html, body {
+            font-family: sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        * {
+            text-decoration: none;
+        }
+        body {
+            background-image: url('img/mealplanner.png');
+            background-position: center;
+            background-size: cover;
+        }
+        .nav {
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+            background-color: white;
+            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.10);
+        }
+        .nav .links a {
+            margin-right: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            color: black;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 100px; /* Adjust as needed */
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #060606;
+            text-align: left;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        button[type="submit"] {
+            background-color: #7e8c06;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #b8ca1c;
+        }
+    </style>
+</head>
+<body>
+    <section id="Mheader">
+        <div class="wrapper">
+            <div class="nav">
+                <div class="logo">
+                    <h3>The NutriGuide</h3>
+                </div>
+                <div class="links">
+                    <a href="Home.html">Home</a>
+                    <a href="dietary.html">Dietary</a>
+                    <a href="Userprofile.html">UserProfile</a>
+                    <a href="Mealplanner.html">MealPlanner</a> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h1>Meal Planner</h1>
+        <form id="userProfile">
+            <div class="form-group">
+                <label for="calories">Daily Calories Goal:</label>
+                <input type="number" id="calories" name="calories" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dietaryPreference">Dietary Preference:</label>
+                <select id="dietaryPreference" name="dietaryPreference" required>
+                    <option value="balanced">Balanced</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="keto">Keto</option>
+                    <!-- Add more dietary preferences as needed -->
+                </select>
+            </div>
+
+            <button type="submit">Generate Meal Plan</button>
+        </form>
+    </div>
+
+    <script src="mscript.js"></script>
+</body>
+</html>
